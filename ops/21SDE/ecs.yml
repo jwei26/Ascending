@@ -60,6 +60,10 @@ Resources:
           PortMappings:
             - ContainerPort: 8080
           Environment:
+            - Name: spring.profiles.active
+              Value: dev
+            - Name: server.port
+              Value: 8080
             - Name: database.databaseName
               Value: !Ref DBName
             - Name: database.portNumber
@@ -70,8 +74,6 @@ Resources:
               Value: !Ref DBUser
             - Name: database.password
               Value: !Ref DBPassword
-            - Name: jms.queue.name
-              Value: car-demo-dev
             - Name: AWS_REGION
               Value: us-east-1
           LogConfiguration:
